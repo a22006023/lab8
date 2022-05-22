@@ -1,0 +1,46 @@
+main{
+    height: 150vh;
+    background-image: url("../images/quizz.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+}
+
+.quizz{
+
+    border: 0;
+}
+
+.name{
+    display: flex;
+    justify-content: center;
+    border: 0;
+    padding-top: 2em;
+}
+
+.name > label {
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 4ch;
+    font-weight: bolder;
+    margin-right: 10px;
+}
+
+.name > input {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 10px 5px 40px;
+    text-align: left;
+    color: white;
+    font-size: large;
+}
+
+.quizz > form > hr{
+    border: 0.5px solid white;
+    margin-left: 5em;
+    margin-right: 6em;
+    margin-top: 1.5em;
+}

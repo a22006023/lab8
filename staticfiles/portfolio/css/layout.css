@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing:border-box;
+}
+
+header {
+    height: 10vh;
+    background: black;
+    color: white;
+    top: 0;
+    font-family: 'Nunito', sans-serif;
+
+  /* alinhando logo e menu */
+    position: sticky;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div {
+  font-size: 2em;
+  padding: 1em;
+}
+
+header nav {
+  display:flex;
+  justify-content: flex-end;
+}
+
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    padding: 0 1.2em 0 0.5em;
+    font-family: 'Nunito', sans-serif;
+}
+
+
+main {
+  height: 85vh;
+  background-color:white;
+  padding: 4em 4em;
+}
+
+footer {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    bottom: 0;
+    height: 5vh;
+    position: fixed;
+    width: 100%;
+    padding: 0 2vw;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}

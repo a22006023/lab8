@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'portfolio/layout.html' %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main>
+
+         {% block main %}
+             {% load static %}
+                <link  rel="stylesheet" href="{% static 'portfolio/css/quizz.css' %}">
+            <main>
+                <fieldset class = "quizz">
+                    <form action = "" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class ="name">
+                            <label for="name">Name: </label>
+                            <input type="text" id= "name" name="name">
+                        </div>
+                        <hr>
+                        <div class="question1">
+                            <label for ="question1"></label>
+                        </div>
+                    </form>
+                </fieldset>
+            </main>
+         {% endblock %}
+    </main>
+</body>
+</html>

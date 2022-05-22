@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'portfolio/layout.html' %}
+    <meta charset="UTF-8">
+    <title>Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    {% block main %}
+        {% load static %}
+        <link  rel="stylesheet" href="{% static 'portfolio/css/course.css' %}">
+        <main>
+            <div class = "container">
+                <div>
+                    <h2>Progamação Web</h2>
+                    <p>&#11088 &#11088 &#11088 &#11088</p>
+                    <ul>
+                        <li> <b>Year:</b> 2º</li>
+                        <li> <b>Semester:</b> 2º</li>
+                        <li> <b>Professor T:</b> Lúcio Ferreira</li>
+                        <li> <b>Professor P:</b> Rui Santos</li>
+                    </ul>
+                    <p>Here we learn how to create sites using HTML, CSS, Django, and JavaScript such as this one.</p>
+                    <h4> ECTS: 6.0</h4>
+                </div>
+
+                <div>
+                    <h2>Computação Gráfica</h2>
+                    <p>&#11088 &#11088 &#11088 &#11088 &#11088</p>
+                    <ul>
+                        <li> <b>Year:</b> 2º</li>
+                        <li> <b>Semester:</b> 2º</li>
+                        <li> <b>Professor T:</b> Pedro Carvalho</li>
+                        <li> <b>Professor P:</b> Shazia Sulemane</li>
+                    </ul>
+                    <p>In this course we learn how to manipulate images and apply filters to them as well as detect objects in images.
+                    <h4>ECTS: 6.0</h4>
+                </div>
+
+                <div>
+                    <h2>Matemática II</h2>
+                    <p>&#11088 &#11088 &#11088 &#11088</p>
+                    <ul>
+                        <li><b>Year:</b> 1º</li>
+                        <li><b>Semester:</b> 2º</li>
+                        <li><b>Professor: </b>André Fonseca</li>
+                    </ul>
+                    <p>This course covers the fundamental methods of differential and integral calculus associated with real functions of real variables.</p>
+                    <h4>ECTS: 6.0</h4>
+                </div>
+            </div>
+
+        </main>
+        <p> </p>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'portfolio/layout.html' %}
+    {% load static %}
+    <link  rel="stylesheet" href="{% static 'portfolio/css/home.css' %}">
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+    {% block main %}
+        {% load static %}
+        <link  rel="stylesheet" href="{% static 'portfolio/css/home.css' %}">
+        <main><h1>Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.</h1></main>
+        <article class = "primeiro">
+            <p>Welcome, I'm Robert Cachapa and I chose this course because I always took a liking for computers and
+                wanted to know how they work. One of the things I'm enjoying the most is learning how to programm and what I can achieve with it.
+                My hobbies are playing video games and skate and when I finish this course I would like to master my skills and put them to work on
+                those areas and others.
+
+            </p>
+        </article>
+        <article class='segundo'>
+        </article>
+
+    {% endblock %}
+</body>
+</html>

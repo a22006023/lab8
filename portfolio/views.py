@@ -1,0 +1,61 @@
+from django.shortcuts import render
+from portfolio.models import PontuacaoQuizz
+import matplotlib
+from matplotlib import pyplot as plt
+matplotlib.use('Agg')
+
+def home_page_view(request):
+    return render(request, 'portfolio/home.html')
+
+
+def projetos_page_view(request):
+    return render(request, 'portfolio/projects.html')
+
+
+def formacao_page_view(request):
+    return render(request, 'portfolio/course.html')
+
+
+def competencias_page_view(request):
+    return render(request, 'portfolio/skills.html')
+
+
+def apresentacao_page_view(request):
+    return render(request, 'portfolio/about.html')
+
+
+def quizz_page_view(request):
+    return render(request, 'portfolio/quizz.html')
+
+
+def blog_page_view(request):
+    return render(request, 'portfolio/blog.html')
+
+def pontuacao_quizz(request):
+    if request.POST['name'] == "Robert Cachapa":
+        return 3
+    return 2
+
+
+def desenha_grafico_resultados(request):
+    pontuacoes = PontuacaoQuizz.objects.all()
+    pontuacao_sorted = sorted(pontuacoes, key=lambda x: x.score, reverse=True)
+    nameslist = []
+    scorelist = []
+
+    for person in pontuacao_sorted:
+        nameslist.append(person.name)
+        scorelist.append(person.score)
+
+    plt.barh(nameslist, scorelist)
+    plt.savefig('portfolio/static/portfolio/images/graf.png',  bbox_inches='tight')
+
+
+def quizz(request):
+    if request.method == 'POST':
+        n = request.POST['name']
+        p = pontuacao_quizz(request)
+        r = PontuacaoQuizz(name=n, score=p)
+        r.save()
+        desenha_grafico_resultados(request)
+    return render(request, 'portfolio/quizz.html')

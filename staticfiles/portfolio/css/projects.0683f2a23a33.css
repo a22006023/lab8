@@ -1,0 +1,65 @@
+main{
+    height: 160vh;
+    background-image: url("../images/projects.d7e232447104.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+}
+
+.projects{
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    padding: 50px;
+
+}
+
+.projects > div{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px #888888;
+    margin: 20px;
+    height: 266px;
+    width: 700px;
+    }
+
+.projects > div > div >img{
+
+    border-radius: 20px 0 0 20px;
+    height:100%;
+    max-width: 100%;
+}
+
+.projects > div div:last-child{
+    width: 70vh;
+    background-color: white;
+    border-radius: 0 20px 20px 0;
+}
+
+
+.projects > div div:last-child > p{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding-top: 1ch;
+    margin-left: 1.5ch;
+    margin-right: 1.5ch;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-size: large;
+}
+
+.projects > div div:last-child > h1{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding-top: 1.5ch;
+     font-family: 'Nunito', sans-serif;
+}
