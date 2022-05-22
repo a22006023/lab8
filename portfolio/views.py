@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from portfolio.models import PontuacaoQuizz
 import matplotlib
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 matplotlib.use('Agg')
 
 def home_page_view(request):
