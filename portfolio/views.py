@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from portfolio.models import PontuacaoQuizz
 #import matplotlib
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 #matplotlib.use('Agg')
 
 def home_page_view(request):
@@ -47,8 +47,8 @@ def desenha_grafico_resultados(request):
         nameslist.append(person.name)
         scorelist.append(person.score)
 
-    plt.barh(nameslist, scorelist)
-    plt.savefig('portfolio/static/portfolio/images/graf.png',  bbox_inches='tight')
+   # plt.barh(nameslist, scorelist)
+   # plt.savefig('portfolio/static/portfolio/images/graf.png',  bbox_inches='tight')
 
 
 def quizz(request):
