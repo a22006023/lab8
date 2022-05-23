@@ -44,3 +44,45 @@ main{
     margin-right: 6em;
     margin-top: 1.5em;
 }
+
+.question1{
+    color:white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.question1 > h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+.question1 > div{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 23em;
+}
+.question1 > div> label{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    margin-left: 0.5em;
+}
+
+.question1 > div> input{
+    margin-bottom: 0.5em;
+    margin-top: 2.7em;
+}
+.question2 {
+
+    color:white;
+    font-family: 'Nunito', sans-serif;
+}
+.question2 > h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}

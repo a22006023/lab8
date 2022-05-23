@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from portfolio.models import PontuacaoQuizz
-#import matplotlib
-#import matplotlib.pyplot as plt
-#matplotlib.use('Agg')
+import matplotlib
+from matplotlib import pyplot as plt
+matplotlib.use('Agg')
 
 def home_page_view(request):
     return render(request, 'portfolio/home.html')
@@ -33,13 +33,15 @@ def blog_page_view(request):
 
 def pontuacao_quizz(request):
     if request.POST['name'] == "Robert Cachapa":
-        return 3
+        return 10
+    if request.POST['question-1'] == "print":
+        return 7
     return 2
 
 
 def desenha_grafico_resultados(request):
     pontuacoes = PontuacaoQuizz.objects.all()
-    pontuacao_sorted = sorted(pontuacoes, key=lambda x: x.score, reverse=True)
+    pontuacao_sorted = sorted(pontuacoes, key=lambda x: x.score, reverse=False)
     nameslist = []
     scorelist = []
 
@@ -47,8 +49,8 @@ def desenha_grafico_resultados(request):
         nameslist.append(person.name)
         scorelist.append(person.score)
 
-   # plt.barh(nameslist, scorelist)
-   # plt.savefig('portfolio/static/portfolio/images/graf.png',  bbox_inches='tight')
+    plt.barh(nameslist, scorelist)
+    plt.savefig('portfolio/static/portfolio/images/graf.png',  bbox_inches='tight')
 
 
 def quizz(request):
