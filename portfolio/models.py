@@ -6,4 +6,4 @@ class PontuacaoQuizz(models.Model):
     score = models.IntegerField()
 
     def str(self):
-        return self
+        return self.name[:50]

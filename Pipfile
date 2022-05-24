@@ -10,6 +10,7 @@ psycopg2-binary = "==2.8.6"
 whitenoise = "==5.1.0"
 gunicorn = "==19.9.0"
 heroku = "*"
+matplotlib = "*"
 
 [dev-packages]
 
