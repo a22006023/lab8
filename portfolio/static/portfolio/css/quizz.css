@@ -1,5 +1,5 @@
 main{
-    height: 150vh;
+    height:200vh;
     background-image: url("../images/quizz.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -45,24 +45,24 @@ main{
     margin-top: 1.5em;
 }
 
-.question1{
+.question{
     color:white;
     font-family: 'Nunito', sans-serif;
 }
 
-.question1 > h2{
+.question > h2{
     display: flex;
     justify-content: center;
     margin-top: 1em;
     font-size: 2em;
     margin-bottom: 0.5em;
 }
-.question1 > div{
+.question > div{
     display: flex;
     justify-content: flex-start;
     margin-left: 23em;
 }
-.question1 > div> label{
+.question > div> label{
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 0.5em;
@@ -70,7 +70,7 @@ main{
     margin-left: 0.5em;
 }
 
-.question1 > div> input{
+.question > div> input{
     margin-bottom: 0.5em;
     margin-top: 2.7em;
 }
