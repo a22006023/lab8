@@ -21,27 +21,27 @@
                         </div>
                         <hr>
                         <div class="question">
-                            <h2>What is a correct syntax to output "Hello World" in Python?</h2>
+                            <h2>1. What is a correct syntax to output "Hello World" in Python?</h2>
                             <div>
                                 <input type="radio" id="print" name ="question1"  value="print">
-                                <label for ="print">print("Hello World")</label>
+                                <label for ="print"><span class ="splitString">print</span>(<span class="printX"> "Hello World" </span>)</label>
                             </div>
                             <div>
                                 <input type="radio" id="println" name="question1" value="println">
-                                <label for="println">println("Hello World")</label>
+                                <label for="println"><span class ="splitString">println</span>(<span class="printX"> "Hello World" </span>)</label>
                             </div>
                             <div>
                                 <input type="radio" id="p" name="question1" value="p">
-                                <label for="p">p "Hello World";</label>
+                                <label for="p"><span class="splitString">p </span> <span class="printX"> "Hello World"</span>;</label>
                             </div>
                             <div>
                                 <input type="radio" id="print2" name="question1" value="print2">
-                                <label for="print2">print "Hello World"</label>
+                                <label for="print2"><span class="splitString">print</span> <span class="printX"> "Hello World"</span></label>
                             </div>
                         </div>
                         <hr>
                         <div class="question">
-                            <h2>Which of these assignment operators are correct?</h2>
+                            <h2>2. Which of these assignment operators are correct?</h2>
                             <div>
                                 <input type="checkbox" id="+=" name="question2" value="+=">
                                 <label for="+=">x += 7</label>
@@ -65,12 +65,66 @@
                         </div>
                         <hr>
                         <div class = "question">
-                            <h2>What is the result of this code?</h2>
+                            <h2>3. What's the result of the following piece of code?</h2>
+                            <h3>...</h3>
+                            <h3>name=<span class ="nameString">"Robert Cachapa, 01/01/1960, Student"</span></h3>
+                            <h3>name.<span class ="splitString">split()</span>[<span class="numberIndex">1</span>][:<span class ="numberIndex">-1</span>]</h3>
+                            <h3>...</h3>
+                            <div class ="q3">
+                                <input type="text" id="q3" name="question3">
+                                <label for ="q3"></label>
+                            </div>
                         </div>
-                        <input type="submit">
+                        <hr>
+                        <div class ="question">
+                            <h2>4. What's the output of the variable when it gets printed? </h2>
+                            <h3>..</h3>
+                            <h3>x = 0.001</h3>
+                            <h3><span class ="splitString">print</span>(f<span class ="printX">"x: </span> <span class="parenthesesRed">{</span>x: < 07<span class="parenthesesRed">}</span><span class="printX">"</span>)</h3>
+                            <h3>..</h3>
+                            <div>
+                                <select id= "q4" name="question4">
+                                    <option value="0.10000">0.10000</option>
+                                    <option value="0.00100">0.00100</option>
+                                    <option value="0.00001">0.00001</option>
+                                    <option value="0.00107">0.00107</option>
+                                </select>
+                                <label for="q4"></label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="question">
+                            <h2>5. What's the output of the list after getting sorted?</h2>
+                            <h3>..</h3>
+                            <h3>names = [<span class="printX"> 'R.Cachapa'</span>, <span class ="printX"> 'R.Reynolds'</span>, <span class ="printX"> 'E.Yeager'</span>]</h3>
+                            <h3>names.<span class="splitString">sort</span>( <span class="parenthesesRed">key </span>=<span class="splitString"> lambda</span> name: name[<span class="numberIndex">2</span>: ])</h3>
+                            <h3><span class="splitString">print</span>(names)</h3>
+                            <h3>..</h3>
+                            <div>
+                                <input type="radio" id="q5.1" name="question5" value="q5.1">
+                                <label for="q5.1">[<span class="printX"> 'R.Reynolds'</span>, <span class ="printX"> 'R.Cachapa'</span>, <span class ="printX"> 'E.Yeager'</span>]</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="q5.2" name="question5" value="q5.2">
+                                <label for="q5.2">[<span class="printX"> 'R.Reynolds'</span>, <span class ="printX"> 'E.Yeager'</span>, <span class ="printX"> 'R.Cachapa'</span>]</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="q5.3" name="question5" value="q5.3">
+                                <label for="q5.3">[<span class="printX"> 'E.Yeager'</span>, <span class ="printX"> 'R.Reynolds'</span>, <span class ="printX"> 'R.Cachapa'</span>]</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="q5.4" name="question5" value="q5.4">
+                                <label for="q5.4">[<span class="printX"> 'R.Cachapa'</span>, <span class ="printX"> 'R.Reynolds'</span>, <span class ="printX"> 'E.Yeager'</span>]</label>
+                            </div>
+                        </div>
+                        <hr>
+                        <input type="submit" class ="submitButton">
+                        <hr>
+                        <div class ="image">
+                            <img src="{% static 'portfolio/images/graf.png' %}" alt ="graf">
+                        </div>
                     </form>
                 </fieldset>
-            <img src="{% static 'portfolio/images/graf.png' %}" alt ="graf">
             </main>
          {% endblock %}
     </main>

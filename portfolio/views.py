@@ -2,7 +2,9 @@ from django.shortcuts import render
 from portfolio.models import PontuacaoQuizz
 import matplotlib
 from matplotlib import pyplot as plt
+
 matplotlib.use('Agg')
+
 
 def home_page_view(request):
     return render(request, 'portfolio/home.html')
@@ -31,12 +33,25 @@ def quizz_page_view(request):
 def blog_page_view(request):
     return render(request, 'portfolio/blog.html')
 
+
 def pontuacao_quizz(request):
-    if request.POST['name'] == "Robert Cachapa":
-        return 10
-    if request.POST['question-1'] == "print":
-        return 7
-    return 2
+    naosei = request.POST.getlist('question2')
+    score = 0
+    if request.POST['question1'] == 'print':
+        score += 1
+    if '+=' in naosei:
+        score += 1
+    if '//=' in naosei:
+        score += 1
+    if '%=' in naosei:
+        score += 1
+    if request.POST['question3'] == 'Cachapa':
+        score += 1
+    if request.POST['question4'] == '0.00100':
+        score += 1
+    if request.POST['question5'] == 'q5.4':
+        score += 1
+    return score
 
 
 def desenha_grafico_resultados(request):
@@ -50,7 +65,7 @@ def desenha_grafico_resultados(request):
         scorelist.append(person.score)
 
     plt.barh(nameslist, scorelist)
-    plt.savefig('portfolio/static/portfolio/images/graf.png',  bbox_inches='tight')
+    plt.savefig('portfolio/static/portfolio/images/graf.png', bbox_inches='tight')
 
 
 def quizz(request):

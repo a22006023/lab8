@@ -1,5 +1,5 @@
 main{
-    height:200vh;
+    height:400vh;
     background-image: url("../images/quizz.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -60,7 +60,7 @@ main{
 .question > div{
     display: flex;
     justify-content: flex-start;
-    margin-left: 23em;
+    margin-left: 27em;
 }
 .question > div> label{
     font-size: 1.5em;
@@ -74,15 +74,79 @@ main{
     margin-bottom: 0.5em;
     margin-top: 2.7em;
 }
-.question2 {
 
-    color:white;
-    font-family: 'Nunito', sans-serif;
+.question> div> select{
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 10px 5px 25px;
+    text-align: left;
+    color: black;
+    font-size: large;
+    margin-top: 2em;
 }
-.question2 > h2{
+
+.question > h3{
+    font-size: 1.5em;
+    padding-left: 15em;
+    margin-left: 5em;
+
+}
+.nameString{
+    color:lawngreen;
+}
+
+.splitString{
+    color:#09c4fb;
+}
+
+.printX{
+    color: #2aa198;
+}
+
+.parenthesesRed{
+    color:#ca4a16
+}
+.numberIndex{
+    color: #d33682
+}
+
+.q3 > input{
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 10px 5px 40px;
+    text-align: left;
+    color: white;
+    font-size: large
+}
+
+.submitButton{
+    width: 270px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 2.5em;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-left: 15em;
+    margin-bottom: 0.5em;
+}
+
+.image{
     display: flex;
     justify-content: center;
-    margin-top: 1em;
-    font-size: 2em;
-    margin-bottom: 0.5em;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.image > img{
+    border-radius: 10px;
 }
