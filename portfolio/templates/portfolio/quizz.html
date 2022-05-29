@@ -15,9 +15,14 @@
                 <fieldset class = "quizz">
                     <form action = "" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
+                        <div class ="title">
+                            <h1>
+                                Python Quizz
+                            </h1>
+                        </div>
                         <div class ="name">
                             <label for="name">Name: </label>
-                            <input type="text" id= "name" name="name">
+                            <input type="text" id= "name" name="name" autocomplete="off">
                         </div>
                         <hr>
                         <div class="question">
@@ -71,7 +76,7 @@
                             <h3>name.<span class ="splitString">split()</span>[<span class="numberIndex">1</span>][:<span class ="numberIndex">-1</span>]</h3>
                             <h3>...</h3>
                             <div class ="q3">
-                                <input type="text" id="q3" name="question3">
+                                <input type="text" id="q3" name="question3" autocomplete="off">
                                 <label for ="q3"></label>
                             </div>
                         </div>

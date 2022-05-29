@@ -15,43 +15,32 @@
         <link  rel="stylesheet" href="{% static 'portfolio/css/course.css' %}">
         <main>
             <div class = "container">
+                {% for course in courses %}
                 <div>
-                    <h2>Progamação Web</h2>
-                    <p>&#11088 &#11088 &#11088 &#11088</p>
+                    <h2>{{course.title}}</h2>
+                    <p>{% if course.rank == 5 %}
+                            &#11088&#11088&#11088&#11088&#11088
+                        {% elif course.rank == 4 %}
+                            &#11088&#11088&#11088&#11088
+                        {% elif course.rank == 3 %}
+                            &#11088&#11088&#11088
+                        {% elif course.rank == 2 %}
+                            &#11088&#11088&
+                        {% else %}
+                            &#11088
+                        {% endif %}
+                    </p>
                     <ul>
-                        <li> <b>Year:</b> 2º</li>
-                        <li> <b>Semester:</b> 2º</li>
-                        <li> <b>Professor T:</b> Lúcio Ferreira</li>
-                        <li> <b>Professor P:</b> Rui Santos</li>
+                        <li> <b>Year:</b> {{ course.year }}º</li>
+                        <li> <b>Semester:</b> {{ course.semester }}º</li>
+                        <li> <b>Professor:</b> {{ course.professor.name}}</li>
+                        <li> <b>Professor:</b> {{ course.professor.name }}</li>
                     </ul>
-                    <p>Here we learn how to create sites using HTML, CSS, Django, and JavaScript such as this one.</p>
-                    <h4> ECTS: 6.0</h4>
+                    <p>{{ course.description}}</p>
+                    <a href=" {{ course.link }}">Link</a>
+                    <h4> ECTS: {{ course.ects }}.0</h4>
                 </div>
-
-                <div>
-                    <h2>Computação Gráfica</h2>
-                    <p>&#11088 &#11088 &#11088 &#11088 &#11088</p>
-                    <ul>
-                        <li> <b>Year:</b> 2º</li>
-                        <li> <b>Semester:</b> 2º</li>
-                        <li> <b>Professor T:</b> Pedro Carvalho</li>
-                        <li> <b>Professor P:</b> Shazia Sulemane</li>
-                    </ul>
-                    <p>In this course we learn how to manipulate images and apply filters to them as well as detect objects in images.
-                    <h4>ECTS: 6.0</h4>
-                </div>
-
-                <div>
-                    <h2>Matemática II</h2>
-                    <p>&#11088 &#11088 &#11088 &#11088</p>
-                    <ul>
-                        <li><b>Year:</b> 1º</li>
-                        <li><b>Semester:</b> 2º</li>
-                        <li><b>Professor: </b>André Fonseca</li>
-                    </ul>
-                    <p>This course covers the fundamental methods of differential and integral calculus associated with real functions of real variables.</p>
-                    <h4>ECTS: 6.0</h4>
-                </div>
+                {% endfor %}
             </div>
 
         </main>

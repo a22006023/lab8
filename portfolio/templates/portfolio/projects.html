@@ -11,20 +11,14 @@
         <link  rel="stylesheet" href="{% static 'portfolio/css/projects.css' %}">
         <main>
             <div class ="projects">
-                <div>
-                    <div><img src="{% static 'portfolio/images/Xadrez.png' %}" alt="Xadrez"></div>
-                    <div><h1>Chess</h1>
-                        <p>This is a chess game made in Kotlin in which you can select the amount of columns and lines you want to play with and also chose if you want to see peaces or not. </p>
+                {% for project in projects %}
+                    <div>
+                        <div><img src ="{{ project.image }}" alt ="{{ project.title }}"></div>
+                        <div><h1>{{ project.title }}</h1>
+                            <p>{{ project.description }} </p>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div><img src = "{% static 'portfolio/images/DEISI_Great_Game.png' %}" alt ="DEISI Great Game"></div>
-                    <div><h1>DEISI Great Game</h1><p>This is a board game made in Java where when you play you have a chance on falling on an Abyss or picking up a Tool which can save you and the first one to reach the end wins.</p></div>
-                </div>
-                <div>
-                    <div><img src = "{% static 'portfolio/images/DEISI_Rockstar.png' %}" alt="DEISI Rockstar"></div>
-                    <div><h1>DEISI Rockstar</h1><p>This is a database project made in Java which reads songs inputed in a .txt file and stores the data. Then you can ask for information, Ex: "COUNT_SONGS_YEAR 2003" that tells how many songs where made in 2003. </p></div>
-                </div>
+                {% endfor %}
             </div>
         </main>
     {% endblock %}

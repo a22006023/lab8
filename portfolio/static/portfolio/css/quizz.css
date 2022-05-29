@@ -1,11 +1,23 @@
 main{
-    height:400vh;
+    height:410vh;
     background-image: url("../images/quizz.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     padding: 0;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    border: 0;
+    padding-top: 0.5em;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 4ch;
+    font-weight: bolder;
+    margin-right: 10px;
 }
 
 .quizz{

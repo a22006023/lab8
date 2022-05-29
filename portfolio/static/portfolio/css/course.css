@@ -17,8 +17,9 @@ main{
 }
 
 .container div {
+    position: relative;
     float: left;
-    width: 300px;   height: 350px;
+    width: 340px;   height: 400px;
     padding: 25px;  margin: 10px;
     background-color: white;
     border-radius: 10px;                 /* arredonda os cantos */
@@ -35,18 +36,30 @@ main{
 .container div > h4 {
     text-align: center;
     font-family: 'Rubik', sans-serif;
-    padding-top: 4ch;
+    position: absolute;
+    bottom: 7%;
+    left: 8%
 }
 .container div > p {
     text-align: center;
     padding-top: 1ch;
     font-family: 'Rubik', sans-serif;
-    font-size: large;
+    font-size: 1.3em;
 }
 
-.container div > ul{
+.container div > ul {
     padding-left: 2.5ch;
     padding-top: 2.3ch;
     font-family: 'Rubik', sans-serif;
+}
 
+a{
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    position: absolute;
+    bottom: 6%;
+    right:10%;
+    font-size: 1.5em;
+    color:black;
+    font-weight: 1000;
 }
