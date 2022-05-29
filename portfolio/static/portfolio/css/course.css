@@ -53,7 +53,7 @@ main{
     font-family: 'Rubik', sans-serif;
 }
 
-a{
+.container > div > a{
     text-decoration: none;
     font-family: 'Nunito', sans-serif;
     position: absolute;

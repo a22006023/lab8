@@ -21,7 +21,7 @@ class Post(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='portfolio/static/portfolio/images')
+    image = models.ImageField(upload_to="pictures/")
 
     def __str__(self):
         return self.title
@@ -38,10 +38,18 @@ class Course(models.Model):
     rank = models.IntegerField(default=1)
     year = models.IntegerField(default=1)
     semester = models.IntegerField(default=1)
-    professor = models.ManyToManyField(Person)
+    professor = models.ForeignKey(Person, related_name='Course', on_delete=models.CASCADE, default='')
     description = models.CharField(max_length=130)
     ects = models.IntegerField(default=0)
     link = models.URLField(blank=True, null=True, default='')
 
     def __str__(self):
         return self.title
+
+
+class Picture(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='pictures/', blank=True)
+
+    def __str__(self):
+        return self.name

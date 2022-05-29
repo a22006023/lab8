@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'portfolio'
 ]
 
@@ -128,3 +130,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CLOUDINARY_STORAGE = {
+  'CLOUD_NAME': "dt5kibrup",
+  'API_KEY': "115614945893457",
+  'API_SECRET': "2pyIW0m14E5Piyl2wLbDOJDsc9Y",
+}
+
+MEDIA_URL = '/portfolio/'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

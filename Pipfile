@@ -11,6 +11,8 @@ whitenoise = "==5.1.0"
 gunicorn = "==19.9.0"
 heroku = "*"
 matplotlib = "*"
+django-cloudinary-storage = "*"
+pillow = "*"
 
 [dev-packages]
 

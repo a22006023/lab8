@@ -1,3 +1,4 @@
+import numpy as np
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
@@ -7,7 +8,7 @@ from portfolio.models import Post
 from portfolio.models import Project
 from portfolio.forms import PostForm
 from portfolio.models import Course
-from portfolio.models import Person
+from portfolio.models import Picture
 import matplotlib
 from matplotlib import pyplot as plt
 
@@ -38,7 +39,8 @@ def apresentacao_page_view(request):
 
 def quizz_page_view(request):
     quizz(request)
-    return render(request, 'portfolio/quizz.html')
+    context = {'quizzes': Picture.objects.all()}
+    return render(request, 'portfolio/quizz.html', context)
 
 
 def blog_page_view(request):
@@ -103,7 +105,8 @@ def desenha_grafico_resultados(request):
         scorelist.append(person.score)
 
     plt.barh(nameslist, scorelist)
-    plt.savefig('portfolio/static/portfolio/images/graf.png', bbox_inches='tight')
+    i = Picture(image=plt.savefig('portfolio/static/portfolio/images/graf.png'), name="graf")
+    i.save()
 
 
 def quizz(request):
