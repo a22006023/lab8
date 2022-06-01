@@ -105,7 +105,8 @@ def desenha_grafico_resultados(request):
         scorelist.append(person.score)
 
     plt.barh(nameslist, scorelist)
-    i = Picture(image=plt.savefig('portfolio/static/portfolio/images/graf.png'), name="graf")
+    plt.savefig('portfolio/static/portfolio/images/graf.png')
+    i = Picture(image='portfolio/static/portfolio/images/graf.png', name="graf")
     i.save()
 
 
