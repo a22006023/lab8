@@ -112,7 +112,7 @@ def desenha_grafico_resultados(request):
     img.save('graf.png')
     i = Picture(image=img, name="graf")
     i.save()
-
+    img.close()
 
 def quizz(request):
     if request.method == 'POST':
