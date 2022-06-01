@@ -1,6 +1,4 @@
-import base64
 
-import numpy as np
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
@@ -110,12 +108,10 @@ def desenha_grafico_resultados(request):
 
     plt.barh(nameslist, scorelist)
     plt.savefig('graf.png')
-    with open("graf.png", "rb") as file:
-        img = base64.b64encode(file.read())
-    img = Image.open(io.BytesIO(img))
+    img = Image.open('graf.png')
+    img.save('graf.png')
     i = Picture(image=img, name="graf")
     i.save()
-    img.close()
 
 
 def quizz(request):
