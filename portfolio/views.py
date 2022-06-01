@@ -4,6 +4,8 @@ import numpy as np
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from PIL import Image
+import io
 
 from portfolio.models import PontuacaoQuizz
 from portfolio.models import Post
@@ -110,6 +112,7 @@ def desenha_grafico_resultados(request):
     plt.savefig('graf.png')
     with open("graf.png", "rb") as file:
         img = base64.b64encode(file.read())
+    img = Image.open(io.BytesIO(img))
     i = Picture(image=img, name="graf")
     i.save()
 
