@@ -39,7 +39,7 @@ def apresentacao_page_view(request):
 
 def quizz_page_view(request):
     quizz(request)
-    context = {'quizzes': Picture.objects.get(id=1)}
+    context = {'quizzes': Picture.objects.all()}
     return render(request, 'portfolio/quizz.html', context)
 
 

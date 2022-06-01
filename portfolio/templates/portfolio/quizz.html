@@ -125,7 +125,9 @@
                         <input type="submit" class ="submitButton">
                         <hr>
                         <div class ="image">
-                             <img src="{{ quizzes.image.url }}" alt ="graf">
+                            {% for quizz in quizzes %}
+                              <img src="{{ quizz.image.url }}" alt ="graf">
+                            {% endfor %}
                         </div>
                     </form>
                 </fieldset>
