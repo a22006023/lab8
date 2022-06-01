@@ -106,9 +106,8 @@ def desenha_grafico_resultados(request):
 
     plt.barh(nameslist, scorelist)
     plt.savefig('graf.png')
-    if Picture.objects.get(id=1) is not None:
-        d = Picture.objects.get(id=1)
-        d.delete()
+    d = Picture.objects.get(id=1)
+    d.delete()
     i = Picture(image='graf.png', name="graf")
     i.save()
 
