@@ -39,7 +39,7 @@ def apresentacao_page_view(request):
 
 def quizz_page_view(request):
     quizz(request)
-    context = {'quizzes': Picture.objects.all()}
+    context = {'quizzes': Picture.objects.get(id=1)}
     return render(request, 'portfolio/quizz.html', context)
 
 
@@ -105,7 +105,7 @@ def desenha_grafico_resultados(request):
         scorelist.append(person.score)
 
     plt.barh(nameslist, scorelist)
-    plt.savefig('pictures/graf.png')
+    plt.savefig('graf.png')
     i = Picture(image='graf.png', name="graf")
     i.save()
 
