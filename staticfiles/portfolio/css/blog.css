@@ -1,0 +1,135 @@
+main{
+    height: 90vh;
+    background-image: url("../images/blog.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    border: 0;
+    padding-top: 0.5em;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 4ch;
+    font-weight: bolder;
+    margin-right: 10px;
+}
+
+main > hr{
+    border: 0.5px solid white;
+    margin-left: 5em;
+    margin-right: 6em;
+    margin-top: 1.5em;
+}
+
+.blog{
+    background-image: url("../images/blog.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    padding: 50px;
+
+
+}
+
+.blog > div{
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px #888888;
+    margin: 20px;
+    height: 20em;
+    width: 35em;
+    background-color: white;
+    font-family: 'Nunito', sans-serif;
+    }
+
+.blogTitle{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2em;
+    margin: 0.5em 1em;
+    text-align: center;
+    word-break:break-word;
+    font-weight: 600;
+}
+
+.blogDescription{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    text-align: center;
+    word-break:break-word;
+    margin: 0.5em 1em;
+}
+
+.blogAuthor{
+    position: absolute;
+    bottom: 10%;
+    margin-left: 1em;
+    margin-bottom: 0.6em;
+}
+
+.blogDate{
+    position: absolute;
+    bottom: 0;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.blog > div > hr{
+    border: 0.5px solid black;
+    margin: 0.5em 3em;
+
+}
+
+h1 > a{
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    background-image: url("../images/blog.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-decoration: none;
+    padding-bottom:3em;
+}
+
+.newBlog:hover{
+    background-color: white;
+    opacity: 0.5;
+}
+
+.Btn{
+    width: 4em;
+    height: 2em;
+    background-color: rgba(41,20,17,0.64);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    margin-bottom: 1.2em;
+    margin-right: 1.4em;
+    position:absolute;
+    border-radius: 10px;
+    bottom:0;
+    right:0;
+}
+.Btn> a{
+    text-decoration: none;
+    position: absolute;
+    right:20%;
+    bottom: -9%;
+    color:white;
+    font-size: 1.6em;
+}

@@ -1,0 +1,86 @@
+main{
+    height: 90vh;
+    background-image: url("../images/blog.78159d67731f.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+}
+.newBlog, .edit{
+    display: flex;
+    justify-content: center;
+    padding-top:6em;
+}
+
+
+#id_description{
+    width: 40em;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 1em 5px 1em;
+    text-align: start;
+    color:darkgrey;
+    font-size: large;
+    margin-top: 0.5em;
+}
+
+#id_author{
+    width: 20em;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 1em 5px 1em;
+    text-align: left;
+    color: darkgrey;
+    font-size: large;
+    margin-top: 0.5em;
+}
+
+#id_title{
+    width: 40em;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 1em 5px 1em;
+    text-align: left;
+    color: darkgrey;
+    font-size: large;
+    margin-top: 0.5em;
+}
+label{
+    color:white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2em;
+    font-weight: 1000;
+    padding-bottom: 2em;
+}
+
+.submitButton{
+    width: 270px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 2.5em;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-left: 5em;
+    margin-bottom: 0.5em;
+}
+
+
+
