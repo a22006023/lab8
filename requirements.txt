@@ -1,2 +1,4 @@
 Django~=4.0.4
 matplotlib~=3.5.2
+environs==8.0.0
+numpy==1.22.4
