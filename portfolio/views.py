@@ -1,3 +1,5 @@
+import base64
+
 import numpy as np
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -105,8 +107,10 @@ def desenha_grafico_resultados(request):
         scorelist.append(person.score)
 
     plt.barh(nameslist, scorelist)
-    a = plt.savefig('graf.png')
-    i = Picture(image=a, name="graf")
+    plt.savefig('graf.png')
+    with open("graf.png", "rb") as file:
+        img = base64.b64encode(file.read())
+    i = Picture(image=img, name="graf")
     i.save()
 
 
