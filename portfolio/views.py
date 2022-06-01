@@ -115,6 +115,7 @@ def desenha_grafico_resultados(request):
     img = Image.open(io.BytesIO(img))
     i = Picture(image=img, name="graf")
     i.save()
+    img.close()
 
 
 def quizz(request):
