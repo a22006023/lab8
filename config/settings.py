@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 from environs import Env
 from pathlib import Path
+import os
 
 env = Env()
 env.read_env()
@@ -137,5 +138,8 @@ CLOUDINARY_STORAGE = {
 }
 
 MEDIA_URL = '/portfolio/'
-
+MEDIA_ROOT = os.path.join(BASE_DIR, "graf.png")
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+

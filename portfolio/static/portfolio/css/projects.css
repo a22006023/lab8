@@ -63,3 +63,17 @@ main{
      padding-top: 1.5ch;
      font-family: 'Nunito', sans-serif;
 }
+
+h1 > a{
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    background-image: url("../images/projects.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-decoration: none;
+    padding-bottom:3em;
+}

@@ -125,8 +125,11 @@
                         <input type="submit" class ="submitButton">
                         <hr>
                         <div class ="image">
+
                             {% for quizz in quizzes %}
-                              <img src="{{ quizz.image.url }}" alt ="graf">
+                                {% if quizz.image != '' %}
+                                    <img src="{{ quizz.image.url }}" alt ="graf">
+                                {% endif %}
                             {% endfor %}
                         </div>
                     </form>

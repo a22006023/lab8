@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'portfolio/layout.html' %}
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    {% block main %}
+        {% load static %}
+        <link  rel="stylesheet" href="{% static 'portfolio/css/newBlog.css' %}">
+        <div class="newBlog">
+            <form method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class ="login">
+                    <div class ="useranme">
+                        <input type="text" id="username" name="username" autocomplete="off">
+                        <label for ="username"></label>
+                    </div>
+                    <div class ="password">
+                        <input type="text" id="password" name="password" autocomplete="off">
+                        <label for ="password"></label>
+                    </div>
+                    <input type="submit" value="Save" class="submitButton">
+                </div>
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'portfolio/layout.html' %}
+    <meta charset="UTF-8">
+    <title>NewCourse</title>
+</head>
+<body>
+    {% block main %}
+        {% load static %}
+        <link  rel="stylesheet" href="{% static 'portfolio/css/newBlog.css' %}">
+        <div class="newBlog">
+            <form method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ course.as_p }}
+                <input type="submit" value="Save" class="submitButton">
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>

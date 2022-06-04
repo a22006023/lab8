@@ -11,6 +11,11 @@
 <body>
 
     {% block main %}
+        <style>
+            header {
+                z-index: 1;
+            }
+        </style>
         {% load static %}
         <link  rel="stylesheet" href="{% static 'portfolio/css/course.css' %}">
         <main>
@@ -41,7 +46,9 @@
                 </div>
                 {% endfor %}
             </div>
-
+        {% if request.user.is_authenticated %}
+            <h1><a href="{% url 'portfolio:newCourse' %}">+ New Course</a></h1>
+        {% endif %}
         </main>
         <p> </p>
     {% endblock %}

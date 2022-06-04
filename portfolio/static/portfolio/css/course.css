@@ -1,5 +1,4 @@
 main{
-    height: 90vh;
     background-image: url("../images/course.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -9,6 +8,11 @@ main{
 }
 
 .container {
+    background-image: url("../images/course.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -62,4 +66,18 @@ main{
     font-size: 1.5em;
     color:black;
     font-weight: 1000;
+}
+
+h1 > a{
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    background-image: url("../images/course.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-decoration: none;
+    padding-bottom:3em;
 }

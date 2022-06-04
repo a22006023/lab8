@@ -7,6 +7,11 @@
 </head>
 <body>
     {% block main %}
+        <style>
+            header {
+                z-index: 1;
+            }
+        </style>
         {% load static %}
         <link  rel="stylesheet" href="{% static 'portfolio/css/projects.css' %}">
         <main>
@@ -20,6 +25,9 @@
                     </div>
                 {% endfor %}
             </div>
+        {% if request.user.is_authenticated %}
+            <h1><a href="{% url 'portfolio:newProject' %}">+ New Project</a></h1>
+        {% endif %}
         </main>
     {% endblock %}
 </body>

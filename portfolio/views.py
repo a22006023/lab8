@@ -1,14 +1,14 @@
-
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from PIL import Image
-import io
+
 
 from portfolio.models import PontuacaoQuizz
 from portfolio.models import Post
 from portfolio.models import Project
-from portfolio.forms import PostForm
+from portfolio.forms import PostForm, CourseForm, ProjectForm
 from portfolio.models import Course
 from portfolio.models import Picture
 import matplotlib
@@ -31,14 +31,6 @@ def formacao_page_view(request):
     return render(request, 'portfolio/course.html', context)
 
 
-def competencias_page_view(request):
-    return render(request, 'portfolio/skills.html')
-
-
-def apresentacao_page_view(request):
-    return render(request, 'portfolio/about.html')
-
-
 def quizz_page_view(request):
     quizz(request)
     context = {'quizzes': Picture.objects.all()}
@@ -51,6 +43,34 @@ def blog_page_view(request):
     }
     return render(request, 'portfolio/blog.html', context)
 
+def login_page_view(request):
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(
+            request,
+            username=username,
+            password=password)
+
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect(reverse('portfolio:home'))
+        else:
+            return render(request, 'portfolio/login.html', {
+                'message': 'Credenciais invalidas.'
+            })
+
+    return render(request, 'portfolio/login.html')
+
+def view_logout(request):
+    logout(request)
+
+    return render(request, 'portfolio/login.html', {
+                'message': 'Foi desconetado.'
+            })
+
 
 def newblog_page_view(request):
     post = PostForm(request.POST or None)
@@ -59,6 +79,28 @@ def newblog_page_view(request):
         return HttpResponseRedirect(reverse('portfolio:blog'))
     context = {'post': post}
     return render(request, 'portfolio/newBlog.html', context)
+
+@login_required
+def newcourse_page_view(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('portfolio:login'))
+    course = CourseForm(request.POST or None)
+    if course.is_valid():
+        course.save()
+        return HttpResponseRedirect(reverse('portfolio:course'))
+    context = {'course': course}
+    return render(request, 'portfolio/newCourse.html', context)
+
+@login_required
+def newproject_page_view(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('portfolio:login'))
+    project = ProjectForm(request.POST or None)
+    if project.is_valid():
+        project.save()
+        return HttpResponseRedirect(reverse('portfolio:projects'))
+    context = {'project': project}
+    return render(request, 'portfolio/newProject.html', context)
 
 
 def edit_page_view(request, post_id):
@@ -108,11 +150,10 @@ def desenha_grafico_resultados(request):
 
     plt.barh(nameslist, scorelist)
     plt.savefig('graf.png')
-    img = Image.open('graf.png')
-    img.save('graf.png')
-    i = Picture(image=img, name="graf")
+
+    i = Picture(image='pictures/graf.png', name="graf")
     i.save()
-    img.close()
+
 
 def quizz(request):
     if request.method == 'POST':
