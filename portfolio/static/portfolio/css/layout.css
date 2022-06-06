@@ -18,9 +18,11 @@ header {
     align-items: center;
 }
 
+
 header div {
-  font-size: 2em;
-  padding: 1em;
+    position:relative;
+    font-size: 2em;
+    padding: 1em;
 }
 
 header nav {
@@ -55,4 +57,10 @@ footer {
     padding: 0 2vw;
     color: white;
     font-family: 'Nunito', sans-serif;
+}
+
+.linkedIn{
+    position: absolute;
+    left:18.5%;
+    bottom:13%;
 }

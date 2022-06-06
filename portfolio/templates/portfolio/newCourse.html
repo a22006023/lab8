@@ -8,13 +8,16 @@
 <body>
     {% block main %}
         {% load static %}
-        <link  rel="stylesheet" href="{% static 'portfolio/css/newBlog.css' %}">
-        <div class="newBlog">
+        <link  rel="stylesheet" href="{% static 'portfolio/css/newCourse.css' %}">
+        <div class="newCourse">
             <form method="POST" action="" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ course.as_p }}
                 <input type="submit" value="Save" class="submitButton">
             </form>
+            {% if view == 'newCourse' %}
+                <h1><a href="{% url 'portfolio:newPerson' %}" class="newPerson">+</a></h1>
+            {% endif %}
         </div>
     {% endblock %}
 </body>

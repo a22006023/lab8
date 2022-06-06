@@ -133,3 +133,20 @@ h1 > a{
     color:white;
     font-size: 1.6em;
 }
+
+.deleteBtn{
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    position: absolute;
+    top: 3%;
+    right:5%;
+    font-size: 1em;
+    color:white;
+    background-color: gray;
+    border-radius: 20px;
+    font-weight: 1000;
+}
+
+.red{
+    color:gray;
+}

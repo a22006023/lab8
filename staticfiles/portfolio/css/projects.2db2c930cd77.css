@@ -1,0 +1,114 @@
+main{
+    background-image: url("../images/projects.d7e232447104.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+}
+
+.projects{
+
+    display: flex;
+    flex-flow:  row wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    padding: 50px;
+    background-image: url("../images/projects.d7e232447104.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.projects > div{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px #888888;
+    margin: 20px;
+    height: 300px;
+    width: 650px;
+    }
+
+.projects > div > div >img{
+
+    border-radius: 20px 0 0 20px;
+    height:100%;
+    max-width: 100%;
+}
+
+.projects > div div:last-child{
+    width: 50vh;
+    background-color: white;
+    border-radius: 0 20px 20px 0;
+}
+
+
+.projects > div div:last-child > p{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding-top: 1ch;
+    margin-left: 1.5ch;
+    margin-right: 1.5ch;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-size: large;
+}
+
+.projects > div div:last-child > h1{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding-top: 1.5ch;
+     font-family: 'Nunito', sans-serif;
+}
+
+h1 > a{
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    background-image: url("../images/projects.d7e232447104.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-decoration: none;
+    padding-bottom:3em;
+}
+
+.editBtn{
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    font-size: 1.5em;
+    color:black;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    font-weight: 1000;
+}
+
+.deleteBtn{
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1em;
+    color:white;
+    background-color: gray;
+    border-radius: 20px;
+    font-weight: 1000;
+    position: absolute;
+    right:3%;
+    top:3%;
+}
+
+.red{
+    color:gray;
+}
+

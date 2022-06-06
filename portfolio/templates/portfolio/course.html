@@ -38,10 +38,14 @@
                     <ul>
                         <li> <b>Year:</b> {{ course.year }}º</li>
                         <li> <b>Semester:</b> {{ course.semester }}º</li>
-                        <li> <b>Professor:</b> {{ course.professor.name}}</li>
+                        <li> <b>Professor:</b> <a href="{{ course.professor.linkedIn }}">{{ course.professor.name}}</a></li>
                     </ul>
                     <p>{{ course.description}}</p>
-                    <a href=" {{ course.link }}">Link</a>
+                    <a href=" {{ course.link }}" class="linkBtn">Link</a>
+                    {% if request.user.is_authenticated %}
+                        <a href="{% url 'portfolio:editCourse' course.id %}" class ="editBtn">Edit</a>
+                        <a href="{% url 'portfolio:deleteCourse' course.id%}" class="deleteBtn"><span class="red">.</span> X <span class="red">.</span></a>
+                    {% endif %}
                     <h4> ECTS: {{ course.ects }}.0</h4>
                 </div>
                 {% endfor %}
@@ -50,7 +54,6 @@
             <h1><a href="{% url 'portfolio:newCourse' %}">+ New Course</a></h1>
         {% endif %}
         </main>
-        <p> </p>
     {% endblock %}
 </body>
 </html>

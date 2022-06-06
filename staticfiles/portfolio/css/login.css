@@ -1,0 +1,56 @@
+main{
+    height: 90vh;
+    background-image: url("../images/login.jpg");
+    background-repeat: no-repeat;
+    background-position:top;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+}
+.newBlog, .edit{
+    display: flex;
+    justify-content: center;
+    padding-top:6em;
+}
+
+input[type=text], input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+
+label{
+    color:white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2em;
+    font-weight: 1000;
+    padding-bottom: 2em;
+}
+
+.submitButton{
+    width: 270px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 2.5em;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-left: 2.5em;
+}
+.submitButton:hover {
+  opacity: 0.8;
+}
+
+
+

@@ -1,0 +1,95 @@
+main{
+    height: 90vh;
+    background-image: url("../images/course.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+}
+.newCourse, .edit{
+    display: flex;
+    justify-content: center;
+    padding-top:3em;
+    padding-left:8em;
+}
+
+
+input[type=text],input[type=url] {
+    width: 40em;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 1em 5px 1em;
+    text-align: left;
+    color: white;
+    font-size: large;
+    margin-top: 0.5em;
+}
+
+input[type=number]{
+    width: 5em;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 1em 5px 1em;
+    text-align: center;
+    color: white;
+    font-size: large;
+    margin-top: 0.7em;
+}
+
+select{
+    width: 15em;
+    position:absolute;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid white;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px 1em 5px 1em;
+    text-align: center;
+    color:white;
+    font-size: large;
+    margin-top: 0.4em;
+}
+label{
+    color:white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2em;
+    font-weight: 1000;
+    padding-bottom: 2em;
+    padding-right:0.3em;
+}
+
+.submitButton{
+    width: 270px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 2.5em;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 0.8em;
+    margin-left: 5em;
+    margin-bottom: 0.5em;
+}
+
+.newPerson{
+    text-decoration: none;
+    color:white;
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    top:30%;
+    right:2400%;
+}
+
+
+

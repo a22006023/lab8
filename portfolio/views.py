@@ -8,7 +8,7 @@ from django.urls import reverse
 from portfolio.models import PontuacaoQuizz
 from portfolio.models import Post
 from portfolio.models import Project
-from portfolio.forms import PostForm, CourseForm, ProjectForm
+from portfolio.forms import PostForm, CourseForm, ProjectForm, PersonForm
 from portfolio.models import Course
 from portfolio.models import Picture
 import matplotlib
@@ -66,10 +66,7 @@ def login_page_view(request):
 
 def view_logout(request):
     logout(request)
-
-    return render(request, 'portfolio/login.html', {
-                'message': 'Foi desconetado.'
-            })
+    return HttpResponseRedirect(reverse('portfolio:home'))
 
 
 def newblog_page_view(request):
@@ -88,20 +85,71 @@ def newcourse_page_view(request):
     if course.is_valid():
         course.save()
         return HttpResponseRedirect(reverse('portfolio:course'))
-    context = {'course': course}
+    context = {'course': course, 'view': 'newCourse'}
     return render(request, 'portfolio/newCourse.html', context)
 
 @login_required
 def newproject_page_view(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('portfolio:login'))
-    project = ProjectForm(request.POST or None)
+    project = ProjectForm(request.POST, request.FILES or None)
     if project.is_valid():
         project.save()
         return HttpResponseRedirect(reverse('portfolio:projects'))
     context = {'project': project}
     return render(request, 'portfolio/newProject.html', context)
 
+
+@login_required
+def view_editar_course(request, course_id):
+
+    course = Course.objects.get(id=course_id)
+    form = CourseForm(request.POST or None, instance=course)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:course'))
+
+    context = {'form': form, 'course_id': course_id}
+    return render(request, 'portfolio/editCourse.html', context)
+
+@login_required
+def view_editar_project(request, project_id):
+
+    project = Project.objects.get(id=project_id)
+    form = ProjectForm(request.POST or None, instance=project)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:projects'))
+    context = {'form': form, 'project_id': project_id}
+    return render(request, 'portfolio/editProject.html', context)
+
+def view_delete_project(request, project_id):
+
+    project = Project.objects.get(id=project_id)
+    project.delete()
+    return HttpResponseRedirect(reverse('portfolio:projects'))
+
+def view_apagar_course(request, course_id):
+
+    course = Course.objects.get(id=course_id)
+    course.delete()
+    return HttpResponseRedirect(reverse('portfolio:course'))
+
+def view_apagar_blog(request, blog_id):
+
+    blog = Post.objects.get(id=blog_id)
+    blog.delete()
+    return HttpResponseRedirect(reverse('portfolio:blog'))
+
+def newperson_page_view(request):
+    person = PersonForm(request.POST or None)
+    if person.is_valid():
+        person.save()
+        return HttpResponseRedirect(reverse('portfolio:newCourse'))
+    context = {'course': person, 'view': 'newPerson'}
+    return render(request, 'portfolio/newCourse.html', context)
 
 def edit_page_view(request, post_id):
     post = Post.objects.get(pk=post_id)

@@ -8,8 +8,8 @@
 <body>
     {% block main %}
         {% load static %}
-        <link  rel="stylesheet" href="{% static 'portfolio/css/newBlog.css' %}">
-        <div class="newBlog">
+        <link  rel="stylesheet" href="{% static 'portfolio/css/newProject.css' %}">
+        <div class="newProject">
             <form method="POST" action="" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ project.as_p }}

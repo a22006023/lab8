@@ -8,20 +8,21 @@
 <body>
     {% block main %}
         {% load static %}
-        <link  rel="stylesheet" href="{% static 'portfolio/css/newBlog.css' %}">
+        <link  rel="stylesheet" href="{% static 'portfolio/css/login.css' %}">
         <div class="newBlog">
             <form method="POST" action="" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class ="login">
                     <div class ="useranme">
+                        <label for ="username">Username:</label>
                         <input type="text" id="username" name="username" autocomplete="off">
-                        <label for ="username"></label>
                     </div>
                     <div class ="password">
-                        <input type="text" id="password" name="password" autocomplete="off">
-                        <label for ="password"></label>
+                        <label for ="password">Password:</label>
+                        <input type="password" id="password" name="password" autocomplete="off">
+
                     </div>
-                    <input type="submit" value="Save" class="submitButton">
+                    <input type="submit" value="Login" class="submitButton">
                 </div>
             </form>
         </div>

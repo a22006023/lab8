@@ -1,0 +1,81 @@
+main{
+    height: 90vh;
+    background-image: url("../images/projects.d7e232447104.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+}
+.newProject, .edit{
+    display: flex;
+    justify-content: center;
+    padding-top:1.8em;
+}
+
+#id_description{
+    width: 30em;
+    height:8em;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 1em 5px 1em;
+    text-align: start;
+    color:white;
+    margin-top: 0.5em;
+    font-size:2em;
+}
+
+#id_title{
+    width: 40em;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 1em 5px 1em;
+    text-align: left;
+    color: white;
+    font-size: large;
+    margin-top: 0.5em;
+}
+label{
+    color:white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2em;
+    font-weight: 1000;
+}
+
+.submitButton{
+    width: 270px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 2.5em;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-left: 6em;
+    margin-bottom: 0.5em;
+}
+
+.errorlist{
+    display: none;
+    margin-top:0.4em;
+}
+
+input[type=file]{
+    color:white;
+    font-size: 1em;
+}
+
+
+

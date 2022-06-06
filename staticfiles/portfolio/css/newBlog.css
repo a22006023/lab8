@@ -10,34 +10,34 @@ main{
 .newBlog, .edit{
     display: flex;
     justify-content: center;
-    padding-top:6em;
+    padding-top:3em;
 }
 
-
 #id_description{
-    width: 40em;
+    width: 30em;
+    height:8em;
     display: flex;
     justify-content: center;
-    background-color: transparent;
+    background-color: rgba(0,0,0,0.3);
     border: 2px solid white;
     border-radius: 20px;
     padding: 10px 1em 5px 1em;
     text-align: start;
-    color:darkgrey;
-    font-size: large;
+    color:white;
     margin-top: 0.5em;
+    font-size:2em;
 }
 
 #id_author{
     width: 20em;
     display: flex;
     justify-content: center;
-    background-color: transparent;
+    background-color: rgba(0,0,0,0.3);
     border: 2px solid white;
     border-radius: 20px;
     padding: 10px 1em 5px 1em;
     text-align: left;
-    color: darkgrey;
+    color: white;
     font-size: large;
     margin-top: 0.5em;
 }
@@ -46,12 +46,12 @@ main{
     width: 40em;
     display: flex;
     justify-content: center;
-    background-color: transparent;
+    background-color: rgba(0,0,0,0.3);
     border: 2px solid white;
     border-radius: 20px;
     padding: 10px 1em 5px 1em;
     text-align: left;
-    color: darkgrey;
+    color: white;
     font-size: large;
     margin-top: 0.5em;
 }
@@ -78,7 +78,7 @@ label{
     overflow: hidden;
     cursor: pointer;
     margin-top: 1em;
-    margin-left: 5em;
+    margin-left: 6em;
     margin-bottom: 0.5em;
 }
 

@@ -36,8 +36,11 @@
                         <h4> {{ post.date }}</h4>
                     </div>
                     <div class="Btn">
-                         <a href="{% url 'portfolio:edit' post.id %}" class ="editBtn">edit</a>
+                         <a href="{% url 'portfolio:editBlog' post.id %}" class ="editBtn">edit</a>
                     </div>
+                    {% if request.user.is_authenticated %}
+                        <a href="{% url 'portfolio:deleteBlog' post.id %}" class ="deleteBtn"><span class="red">.</span> X <span class="red">.</span></a>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>
