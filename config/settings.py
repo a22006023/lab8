@@ -138,7 +138,7 @@ CLOUDINARY_STORAGE = {
 }
 
 MEDIA_URL = '/portfolio/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "graf.png")
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 

@@ -10,7 +10,10 @@ from portfolio.models import Post
 from portfolio.models import Project
 from portfolio.forms import PostForm, CourseForm, ProjectForm, PersonForm
 from portfolio.models import Course
-from portfolio.models import Picture
+import urllib
+from urllib.parse import urlparse
+import base64
+import io
 import matplotlib
 from matplotlib import pyplot as plt
 
@@ -33,7 +36,7 @@ def formacao_page_view(request):
 
 def quizz_page_view(request):
     quizz(request)
-    context = {'quizzes': Picture.objects.all()}
+    context = {'data': desenha_grafico_resultados()}
     return render(request, 'portfolio/quizz.html', context)
 
 
@@ -186,22 +189,27 @@ def pontuacao_quizz(request):
     return score
 
 
-def desenha_grafico_resultados(request):
-    pontuacoes = PontuacaoQuizz.objects.all()
-    pontuacao_sorted = sorted(pontuacoes, key=lambda x: x.score, reverse=True)
-    nameslist = []
-    scorelist = []
+def desenha_grafico_resultados():
+    pontuacoes = PontuacaoQuizz.objects.all().order_by('score')
 
-    for person in pontuacao_sorted:
-        nameslist.append(person.name)
-        scorelist.append(person.score)
+    nameslist = [pontuacao.name for pontuacao in pontuacoes]
+    scorelist = [pontuacao.score for pontuacao in pontuacoes]
 
     plt.barh(nameslist, scorelist)
-    plt.savefig('graf.png')
+    plt.ylabel("Score")
+    plt.autoscale()
 
-    i = Picture(image='pictures/graf.png', name="graf")
-    i.save()
+    fig = plt.gcf()
+    plt.close()
 
+    buf = io.BytesIO()
+    fig.savefig(buf, format='png')
+
+    buf.seek(0)
+    string = base64.b64encode(buf.read())
+    uri = urllib.parse.quote(string)
+
+    return uri
 
 def quizz(request):
     if request.method == 'POST':
@@ -209,4 +217,3 @@ def quizz(request):
         p = pontuacao_quizz(request)
         r = PontuacaoQuizz(name=n, score=p)
         r.save()
-        desenha_grafico_resultados(request)

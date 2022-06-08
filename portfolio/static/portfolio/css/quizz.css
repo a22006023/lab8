@@ -157,6 +157,12 @@ main{
     justify-content: center;
     align-items: center;
     margin-top: 2em;
+    background-image: url("../images/quizz.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 2em;
 }
 
 .image > img{
