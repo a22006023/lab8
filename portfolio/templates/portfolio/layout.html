@@ -21,7 +21,6 @@
             <a href="{% url 'portfolio:projects' %}">projects</a>
             <a href="{% url 'portfolio:quizz' %}">quizz</a>
             <a href="{% url 'portfolio:blog' %}">blog</a>
-            <a href="{% url 'portfolio:weather'%}">weather</a>
             {% if not request.user.is_authenticated %}
                 <a href="{% url 'portfolio:login' %}">login</a>
             {% else %}

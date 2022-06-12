@@ -22,6 +22,5 @@ urlpatterns = [
     path('editProject/<int:project_id>', views.view_editar_project, name='editProject'),
     path('deleteBlog/<int:blog_id>', views.view_apagar_blog, name="deleteBlog"),
     path('deleteProjects/<int:project_id>', views.view_delete_project, name='deleteProject'),
-    path('weather', views.view_weather, name='weather'),
 ]
 

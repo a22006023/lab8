@@ -26,7 +26,7 @@
             let dataTemp = document.querySelector('.data')
 
             document.addEventListener('DOMContentLoaded', function(){
-                fetch('//api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json%27')
+                fetch('//api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json%27', {mode: 'no-cors'})
                     .then(response => response.json())
                     .then(data => {
                         maxTemp.innerHTML = data['data'][0]['tMax'];
