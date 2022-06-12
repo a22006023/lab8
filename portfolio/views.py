@@ -40,6 +40,9 @@ def quizz_page_view(request):
     return render(request, 'portfolio/quizz.html', context)
 
 
+def view_weather(request):
+    return render(request, 'portfolio/weather.html')
+
 def blog_page_view(request):
     context = {
         'posts': Post.objects.all(),

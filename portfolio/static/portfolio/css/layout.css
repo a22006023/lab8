@@ -20,11 +20,18 @@ header {
 
 
 header div {
-    position:relative;
+    display: flex;
     font-size: 2em;
     padding: 1em;
 }
 
+header div a{
+    padding-left: 0.5em;
+    margin-top:0.1em;
+}
+header div p{
+    padding-top:0.2em;
+}
 header nav {
   display:flex;
   justify-content: flex-end;
@@ -57,10 +64,4 @@ footer {
     padding: 0 2vw;
     color: white;
     font-family: 'Nunito', sans-serif;
-}
-
-.linkedIn{
-    position: absolute;
-    left:18.5%;
-    bottom:13%;
 }
