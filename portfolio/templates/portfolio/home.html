@@ -10,38 +10,30 @@
 <body>
 
     {% block main %}
+        <style>
+            header {
+                z-index: 1;
+            }
+        </style>
         {% load static %}
         <link  rel="stylesheet" href="{% static 'portfolio/css/home.css' %}">
         <section>
-            <div class="weatherDisplay">
-                <h3 class="data"></h3>
-                <h3 class="maxTemp"></h3>
-                <h3 class="minTemp"></h3>
-                <h3 class="chuvaProb"></h3>
-            </div>
-        </section>
-        <script>
-            let maxTemp = document.querySelector('.maxTemp')
-            let minTemp = document.querySelector('.minTemp')
-            let dataTemp = document.querySelector('.data')
-
-            document.addEventListener('DOMContentLoaded', function(){
-                fetch('//api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json%27', {mode: 'no-cors'})
-                    .then(response => response.json())
-                    .then(data => {
-                        maxTemp.innerHTML = data['data'][0]['tMax'];
-                        minTemp.innerHTML = data['data'][0]['tMin'];
-                        dataTemp.innerHTML = data['data'][0]['forecastDate'];
-                    })
-            })
-        </script>
+                 <div class="weatherDisplay">
+                    <img src="" class ="icon" alt="icon">
+                    <h3 class="data"></h3>
+                    <h3 class="maxTemp"></h3>
+                    <h3 class="minTemp"></h3>
+                    <h3 class="currentTemp"></h3>
+                 </div>
+            </section>
+            <script src="{% static 'portfolio/js/weather.js' %}">
+            </script>
         <main><h1>Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.</h1></main>
         <article class = "primeiro">
             <p>Welcome, I'm Robert Cachapa and I chose this course because I always took a liking for computers and
                 wanted to know how they work. One of the things I'm enjoying the most is learning how to programm and what I can achieve with it.
                 My hobbies are playing video games and skate and when I finish this course I would like to master my skills and put them to work on
                 those areas and others.
-
             </p>
         </article>
         <article class='segundo'>

@@ -1,5 +1,5 @@
 main{
-    height: 85vh;
+    height: 75vh;
     background-image: url("../images/heroImage.jpg");
     background-repeat: no-repeat;
     background-position: top;
@@ -13,7 +13,7 @@ main > h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding : 7ch;
+    padding-top :8em;
     color: white;
     font-weight: lighter;
     font-family: 'Nunito', sans-serif;
@@ -42,11 +42,53 @@ article.primeiro > p{
 }
 article.segundo {
 
-    height: 85vh;
+    height: 65vh;
     background-image: url("../images/heroImage.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     align-items: start;
+}
+
+.weatherDisplay{
+    color:white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.icon{
+    position: absolute;
+    left: 47.5%;
+    top:21%;
+}
+
+.currentTemp{
+    position:absolute;
+    left: 48%;
+    top:31%;
+    font-size: 1.5em;
+}
+
+.minTemp{
+    position:absolute;
+    left: 43%;
+    top:32.2%;
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+.maxTemp{
+    position:absolute;
+    left: 54.5%;
+    top:32.2%;
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+.data{
+    position:absolute;
+    left: 47.3%;
+    top:16%;
+    font-size: 1.5em;
+
 }
