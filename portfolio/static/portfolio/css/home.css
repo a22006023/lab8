@@ -22,7 +22,6 @@ main > h1{
 
 article.primeiro {
   /* definindo altura e cor */
-    height: 40vh;
     background: dimgray;
     text-align: center;
     font-size: 2rem;
@@ -35,9 +34,11 @@ article.primeiro > p{
     display: flex;
     justify-content: center;
     padding-top: 1.5em;
+    padding-bottom: 1.5em;
     text-align: center;
     font-family: 'Nunito', sans-serif;
     color: white;
+    background: dimgray;
 
 }
 article.segundo {
